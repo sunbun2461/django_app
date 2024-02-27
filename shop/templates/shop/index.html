@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shop Home</title>
+</head>
+
+<body>
+    <h1>Shop GSE</h1>
+    <p>Our latest products will be listed here.</p>
+    {% for product in products %}
+    <div style="margin-top: 1rem;border-top: 1px solid grey;padding-top: 1rem;">
+        <div>
+            <strong>Name: {{ product.name }}</strong>
+        </div><br>
+        <div>
+            Category: {{ product.category }}
+        </div><br>
+        <div>
+            Description: {{ product.description|safe }}
+        </div><br>
+        <div>
+            Price: ${{ product.price }}
+        </div>
+    </div>
+    {% endfor %}
+    <img style="width:5rem;margin-top: 1rem;" src="https://static-00.iconduck.com/assets.00/django-icon-1606x2048-lwmw1z73.png" alt="Sample Product">
+    <!-- shop/templates/shop/index.html -->
+    {% for product in products %}
+    <div>
+        index.html
+        <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>
+        <p>{{ product.description }}</p>
+        <p>Price: ${{ product.price }}</p>
+    </div>
+    {% endfor %}
+
+</body>
+
+</html>
