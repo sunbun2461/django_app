@@ -17,14 +17,9 @@ class ProductDetailView(DetailView): # This class-based view is for the product 
     context_object_name = 'product'
 
 
-# how are the class views and the def views different?
-#   class views are used for more complex views, and def views are used for simpler views, such as the category_list and category_detail views
+def index(request):
+    return render(request, 'shop/index.html')
 
-# why dont the def views have a corresponding class in models.py? because the def views are simpler views, and do not require a model
-
-# what is a complex view vs a simple view?  a complex view is a view that requires more than one model, and a simple view is a view that requires only one model  
- 
- 
 
 def category_list(request): # This function gets all the categories that have no parent
     categories = Category.objects.filter(parent=None) # This line gets all the categories that have no parent
@@ -44,3 +39,13 @@ def sub_category_detail(request, category_name, sub_category_name):
     products = Product.objects.filter(category=sub_category)
     return render(request, 'sub_category_detail.html', {'sub_category': sub_category, 'products': products})
 
+
+
+# how are the class views and the def views different?
+#   class views are used for more complex views, and def views are used for simpler views, such as the category_list and category_detail views
+
+# why dont the def views have a corresponding class in models.py? because the def views are simpler views, and do not require a model
+
+# what is a complex view vs a simple view?  a complex view is a view that requires more than one model, and a simple view is a view that requires only one model  
+ 
+ 
