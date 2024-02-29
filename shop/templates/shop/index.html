@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends "shop/base_generic.html" %}
 
-<head>
-    <title>Shop Home</title>
-</head>
 
-<body>
     <h1>Shop GSE</h1>
     <p>Our latest products will be listed here.</p>
     {% for product in products %}
@@ -34,7 +29,3 @@
         <p>Price: ${{ product.price }}</p>
     </div>
     {% endfor %}
-
-</body>
-
-</html>

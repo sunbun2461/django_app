@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Site header goes here -->
+    </header>
+
+    <nav>
+        <!-- Navigation bar goes here -->
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- This is where child templates will insert their content -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Site footer goes here -->
+    </footer>
+</body>
+</html>

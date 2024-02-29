@@ -43,3 +43,4 @@ def sub_category_detail(request, category_name, sub_category_name):
     sub_category = get_object_or_404(Category, name=sub_category_name, parent__name=category_name)
     products = Product.objects.filter(category=sub_category)
     return render(request, 'sub_category_detail.html', {'sub_category': sub_category, 'products': products})
+
