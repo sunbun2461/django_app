@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import Product, Category
-from django.shortcuts import get_object_or_404
 
 class ProductDetailView(DetailView):
     model = Product
@@ -11,7 +10,9 @@ class ProductDetailView(DetailView):
 class ProductListView(ListView):
     model = Product
     template_name = 'shop/index.html'
-    context_object_name = 'products' #what is context_object_name? #context_object_name is the name of the variable that will be used in the template to represent the list of objects
+    context_object_name = 'products' 
+
+    
 class CategoryListView(ListView):
     model = Category
     template_name = 'category_list.html'
