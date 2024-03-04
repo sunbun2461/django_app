@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls')),  # This line includes your app's URLs
+    path('shop/', include('shop.urls', namespace='shop')),  # This line includes your app's URLs
     # You can add more paths for other apps here
     path('summernote/', include('django_summernote.urls')),#why is there a summernote path here? # this is for the summernote editor, it is a third party app, and it needs to be included in the project's urls.py, so that it can be used in the project
  ]

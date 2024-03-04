@@ -1,37 +1,26 @@
 <h1>Categories</h1>
 <p>Categories are not yet implemented suckassss!</p>
-        {% comment %} </div>
-        <div class="col-md-4">
-            <a href="{{ route('categories.create') }}" class="btn btn-primary pull-right">Create Category</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($categories as $category)
-                    <tr>
-                        <td>{{ $category->id }}</td>
-                        <td>{{ $category->name }}</td>
-                        <td>
-                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('categories.destroy', $category->id) }}" method="post" style="display: inline;">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            {{ $categories->links() }}
-        </div>
-    </div> {% endcomment %}
+<p>SUWEEETTTT. emmet.includeLanguages django-html</p>
+{{ categories.0 }}
+<section class="categories">
+    <ul>
+        {% for category in categories %}
+        <li>
+            <!-- <a href="{ % url '#' category.slug %}">{ { category.name }}</a> -->
+            <a href="#">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<script>
+    //const user = 'trio2461';
+    const user = 'sunbun2461';
+    fetch(`https://api.github.com/users/${user}/repos`)
+        .then(response => {
+            console.log(response.ok ? 'success' : 'failure');
+            return response.ok ? response : Promise.reject(response);
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+</script>
