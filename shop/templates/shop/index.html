@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Shop Home</title>
-</head>
-
-<body>
+    {% extends "base_generic.html" %}
+    {% block content %}
     <h1>Shop GSE</h1>
     <p>Our latest products will be listed here.</p>
     {% for product in products %}
@@ -23,6 +18,7 @@
             Price: ${{ product.price }}
         </div>
     </div>
+
     {% endfor %}
     <img style="width:5rem;margin-top: 1rem;" src="https://static-00.iconduck.com/assets.00/django-icon-1606x2048-lwmw1z73.png" alt="Sample Product">
     <!-- shop/templates/shop/index.html -->
@@ -34,7 +30,4 @@
         <p>Price: ${{ product.price }}</p>
     </div>
     {% endfor %}
-
-</body>
-
-</html>
+    {% endblock %}

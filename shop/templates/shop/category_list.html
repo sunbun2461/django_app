@@ -1,0 +1,26 @@
+<h1>Categories</h1>
+<p>Categories are not yet implemented suckassss!</p>
+<p>SUWEEETTTT. emmet.includeLanguages django-html</p>
+<section class="categories">
+    <ul>
+        {% for category in categories %}
+        <li>
+            <!-- <a href="{ % url '#' category.slug %}">{ { category.name }}</a> -->
+            <a href="#">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<script>
+    //const user = 'trio2461';
+    const user = 'sunbun2461';
+    fetch(`https://api.github.com/users/${user}/repos`)
+        .then(response => {
+            console.log(response.ok ? 'success' : 'failure');
+            return response.ok ? response : Promise.reject(response);
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+</script>
+<!-- need to figure out how to only show top level categories and that may be a model things, view thing, I'm not sure.  -->
